@@ -47,8 +47,8 @@ var totalcash = 2000, //cash in the cash pile
         mail_attachment = '', //the results of the test that gets emailed.
         mail_subject = 'IGT data',
 		mailsvc_url = '/MailSvc/MailSvc.asmx/SendMail' //Email Service. CORS is disabled so I hope this isn't exploitable.
-        GAME_VERSION = "0.16",
-        GAME_VERSION_DATE = new Date("February 23, 2015 01:44:00"),    
+        GAME_VERSION = "0.17",
+        GAME_VERSION_DATE = new Date("September 1, 2017 08:07:00"),    
         DECKA_WIN = 100, //how much did we win on Deck A click
         DECKB_WIN = 100, //how much did we win on Deck B click
         DECKC_WIN = 50, //how much did we win on Deck C click
@@ -205,11 +205,11 @@ $(function () {
                 $(".outputtext").css("color", "blue");
 
             if (totalcash < 0) totalcash = 0; //if total cash is negative make it 0.			               
-            $("#totalmoney").html("$" + totalcash.toString());
+            $("#totalmoney").html("€" + totalcash.toString());
             //calculate our cash bar and display
             var cashpilebarvalue = 100 * totalcash / CASHMAX;
             $("#cashpilebar").css("width", cashpilebarvalue.toString() + "%"); //grow or shrink the progress bar
-            $("#cashpileamt").html("$" + totalcash);                            //change the label in the progress bar
+            $("#cashpileamt").html("€" + totalcash);                            //change the label in the progress bar
         }
         else //game over 
         {
